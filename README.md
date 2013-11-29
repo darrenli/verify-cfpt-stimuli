@@ -1,10 +1,11 @@
-Verify CFPT Stimuli
+Verify CFPT and OOO Facial Perception Stimuli
 -------------------
 Verifies input excel against input directory.
 
 Install
 -------
 
-      git clone https://github.com/darrenli/verify-cfpt-stimuli
+      gem install verify-ooo
+      gem install verify-cfpt
 
 

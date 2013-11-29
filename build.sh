@@ -1,4 +1,6 @@
 #!/bin/bash
-rm verify-cfpt-stimuli-*.gem
-gem build verify-cfpt-stimuli.gemspec
-gem install verify-cfpt-stimuli-*.gem
+rm *.gem
+gem build verify-ooo.gemspec
+gem build verify-cfpt.gemspec
+gem install verify-cfpt-*.gem
+gem install verify-ooo-*.gem

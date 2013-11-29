@@ -2,13 +2,25 @@
 require 'highline/import'
 require 'roo'
 
-class CFPT
-
-  def initialize
-
-  end
+class VerifyStimuli
 
   def start
+    puts "'#{File.basename($0)}'"
+    puts "#{File.basename($0).class}"
+
+    # set up column whitelist
+    columns = []
+    case File.basename($0)
+    when 'cfpt'
+      columns = ['V','W','X','Y','Z','AA']
+    when 'ooo'
+      columns = ['F','G','H']
+    end
+    if columns.empty?
+      puts "Sorry, column whitelist was not found"
+      exit(1)
+    end
+
     # prompt for and validate input spreadsheet file
     spreadsheet = self.cli.ask("What file do you want to validate? ").strip
     spreadsheet.delete!('\\')
@@ -34,12 +46,9 @@ class CFPT
 
     # pull all the picture values from given spreadsheet
     values = []
-    columns = ['V','W','X','Y','Z','AA']
-    # TODO - limit to 2-13
     columns.each do |column|
-      values.concat(excel.column(column))
+      values.concat(excel.column(column)[1..-1])
     end
-    values -= columns
 
     # iterate matches by +1 for every file that is mentioned in the spreadsheet
     matches = {}
