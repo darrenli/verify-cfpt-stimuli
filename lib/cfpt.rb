@@ -33,6 +33,7 @@ class CFPT
     # pull all the picture values from given spreadsheet
     values = []
     columns = ['V','W','X','Y','Z','AA']
+    # TODO - limit to 2-13
     columns.each do |column|
       values.concat(excel.column(column))
     end

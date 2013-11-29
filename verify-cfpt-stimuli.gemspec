@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.executables = ['cfpt']
   s.require_paths = ['lib']
 
-  s.add_dependency 'thor', '~> 0.18.1'
   s.add_dependency 'highline', '~> 1.6.20'
   s.add_dependency 'roo', '~> 1.12.2'
 end
