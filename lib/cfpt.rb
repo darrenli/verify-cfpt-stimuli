@@ -11,6 +11,7 @@ class CFPT
   def start
     # prompt for and validate input spreadsheet file
     spreadsheet = self.cli.ask("What file do you want to validate? ").strip
+    spreadsheet.delete!('\\')
     if !File.file?(spreadsheet)
       puts "Sorry, the input spreadsheet does not exist."
       exit(1)
@@ -18,6 +19,7 @@ class CFPT
 
     # prompt for and validate input directory
     directory = self.cli.ask("What directory do you want to validate? ").strip
+    directory.delete!('\\')
     if !File.directory?(directory)
       puts "Sorry, the input directory does not exist."
       exit(1)
