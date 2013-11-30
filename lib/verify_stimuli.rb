@@ -5,9 +5,6 @@ require 'roo'
 class VerifyStimuli
 
   def start
-    puts "'#{File.basename($0)}'"
-    puts "#{File.basename($0).class}"
-
     # set up column whitelist
     columns = []
     case File.basename($0)
