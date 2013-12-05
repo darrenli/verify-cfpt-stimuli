@@ -11,7 +11,7 @@ class VerifyStimuli
     when 'cfpt'
       columns = ['V','W','X','Y','Z','AA']
     when 'ooo'
-      columns = ['F','G','H']
+      columns = ['I','J','K']
     end
     if columns.empty?
       puts "Sorry, column whitelist was not found"
